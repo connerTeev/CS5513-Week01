@@ -1,5 +1,6 @@
 // Use this workspace to submit your homework for Week 1: Assignment 2: Git + GitHub Basics
-//let ourHttp = require('http');
+//let ourHttp = require('http') 
+//or using ES6 module syntax
 import http from 'http';
 
 let ourServer = http.createServer(
@@ -12,19 +13,22 @@ let ourServer = http.createServer(
         'Content-Type': 'text/plain'
       }
     );
-    
+
+    let result;
     if (req.url === '/') {
-      res.end('Hello Home!');
+      result = 'Hello Home!';
     } else if (req.url === '/posts') {
-      res.end('Hello Posts!');
+      result = 'Hello Posts!';
     } else if (req.url === '/docs') {
-      res.end('Hello Docs!');
+      result = 'Hello Docs!';
     } else {
-      res.end('Hello World!');
+      result = 'Hello World!';
     }
+    res.end(result);
   }
+
 );
 
 ourServer.listen(
   80, "0.0.0.0"
-)
+);
