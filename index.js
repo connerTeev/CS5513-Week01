@@ -1,9 +1,8 @@
 // Use this workspace to submit your homework for Week 1: Assignment 2: Git + GitHub Basics
-//let ourHttp = require('http') 
+let ourHttp = require('http') 
 //or using ES6 module syntax
-import http from 'http';
 
-let ourServer = http.createServer(
+let ourServer = ourHttp.createServer(
 
   (req, res) => {
     console.log(req.url);
